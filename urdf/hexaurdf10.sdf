@@ -1,0 +1,1332 @@
+<sdf version='1.7'>
+  <model name='hexaurdf10'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.004753 -1.4e-05 -0.012059 0 -0 0</pose>
+        <mass>0.589552</mass>
+        <inertia>
+          <ixx>3.1084</ixx>
+          <ixy>-0.254602</ixy>
+          <ixz>2.03206</ixz>
+          <iyy>6.37928</iyy>
+          <iyz>0.164179</iyz>
+          <izz>5.33195</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__camera_link_collision_1'>
+        <pose>-0.113664 0.000281 0.073621 0 0.523599 3.12647</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/camera_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__imu_link_collision_2'>
+        <pose>-0.0001 0 0.001 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/imu_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__camera_link_visual_1'>
+        <pose>-0.113664 0.000281 0.073621 0 0.523599 3.12647</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/camera_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__imu_link_visual_2'>
+        <pose>-0.0001 0 0.001 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/imu_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='camera_link_camera' type='depth'>
+        <update_rate>20</update_rate>
+        <camera>
+          <horizontal_fov>1.0472</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>3</far>
+          </clip>
+        </camera>
+        <plugin name='camera_link_controller' filename='libgazebo_ros_openni_kinect.so'>
+          <baseline>0.2</baseline>
+          <alwaysOn>1</alwaysOn>
+          <updateRate>1.0</updateRate>
+          <cameraName>camera_link_ir</cameraName>
+          <imageTopicName>/camera_link/color/image_raw</imageTopicName>
+          <cameraInfoTopicName>/camera_link/color/camera_info</cameraInfoTopicName>
+          <depthImageTopicName>/camera_link/depth/image_raw</depthImageTopicName>
+          <depthImageInfoTopicName>/camera_link/depth/camera_info</depthImageInfoTopicName>
+          <pointCloudTopicName>/camera_link/depth/points</pointCloudTopicName>
+          <frameName>camera_link</frameName>
+          <pointCloudCutoff>0.5</pointCloudCutoff>
+          <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+          <distortionK1>0.00000001</distortionK1>
+          <distortionK2>0.00000001</distortionK2>
+          <distortionK3>0.00000001</distortionK3>
+          <distortionT1>0.00000001</distortionT1>
+          <distortionT2>0.00000001</distortionT2>
+          <CxPrime>0</CxPrime>
+          <Cx>0</Cx>
+          <Cy>0</Cy>
+          <focalLength>0</focalLength>
+          <hackBaseline>0</hackBaseline>
+        </plugin>
+        <pose>-0.113664 0.000281 0.073621 0 0.523599 3.12647</pose>
+      </sensor>
+      <gravity>1</gravity>
+      <sensor name='imu_sensor' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <visualize>1</visualize>
+        <topic>__default_topic__</topic>
+        <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+          <topicName>imu</topicName>
+          <bodyName>imu_link</bodyName>
+          <updateRateHZ>10.0</updateRateHZ>
+          <gaussianNoise>0.0</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>imu_link</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose>-0.0001 0 0.001 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='j_c1_lf' type='revolute'>
+      <pose relative_to='base_link'>-0.087434 -0.047179 -0.05093 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>c1_lf</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_lf'>
+      <pose relative_to='j_c1_lf'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.010556 -0.053368 0.028245 0 -0 0</pose>
+        <mass>0.11513</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_lf_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_lf.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_lf_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_lf.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_lf' type='revolute'>
+      <pose relative_to='c1_lf'>0.015709 -0.086037 0.0282 0 -0 0</pose>
+      <parent>c1_lf</parent>
+      <child>thigh_lf</child>
+      <axis>
+        <xyz>-0.990437 0.137968 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_lf'>
+      <pose relative_to='j_thigh_lf'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.040507 -0.036953 0.025841 0 -0 0</pose>
+        <mass>0.066086</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_lf_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_lf.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_lf_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_lf.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_lf' type='revolute'>
+      <pose relative_to='thigh_lf'>-0.023019 -0.082153 0.048284 0 -0 0</pose>
+      <parent>thigh_lf</parent>
+      <child>tibia_lf</child>
+      <axis>
+        <xyz>-0.990437 0.137968 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_lf'>
+      <pose relative_to='j_tibia_lf'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.03042 0.006502 -0.024404 0 -0 0</pose>
+        <mass>0.083403</mass>
+        <inertia>
+          <ixx>0.00514332</ixx>
+          <ixy>-0.000575305</ixy>
+          <ixz>-2.4807e-05</ixz>
+          <iyy>0.00819378</iyy>
+          <iyz>-1.93052e-05</iyz>
+          <izz>0.00113799</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_lf_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_lf.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='tibia_lf_fixed_joint_lump__tip6_collision_1'>
+        <pose>-0.033825 0.002881 -0.121195 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip6.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2000</mu>
+              <mu2>1000</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_lf_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_lf.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='tibia_lf_fixed_joint_lump__tip6_visual_1'>
+        <pose>-0.033825 0.002881 -0.121195 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='tip6_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>tibia_lf_fixed_joint_lump__tip6_collision_5</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='tip6_plugin' filename='libgazebo_ros_bumper.so'>
+          <bumperTopicName>tip6_contactsensor_state</bumperTopicName>
+          <frameName>tip6</frameName>
+        </plugin>
+        <pose>-0.033825 0.002881 -0.121195 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='j_c1_lm' type='revolute'>
+      <pose relative_to='base_link'>-0.00021 -0.041978 -0.05093 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>c1_lm</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_lm'>
+      <pose relative_to='j_c1_lm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.004105 -0.054247 0.028245 0 -0 0</pose>
+        <mass>0.115131</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_lm_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_lm.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_lm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_lm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_lm' type='revolute'>
+      <pose relative_to='c1_lm'>0.038152 -0.078699 0.0282 0 -0 0</pose>
+      <parent>c1_lm</parent>
+      <child>thigh_lm</child>
+      <axis>
+        <xyz>-0.99577 0.09188 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_lm'>
+      <pose relative_to='j_thigh_lm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.029146 -0.046442 0.025841 0 -0 0</pose>
+        <mass>0.0660859</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_lm_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_lm.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_lm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_lm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_lm' type='revolute'>
+      <pose relative_to='thigh_lm'>-0.000204 -0.085316 0.048284 0 -0 0</pose>
+      <parent>thigh_lm</parent>
+      <child>tibia_lm</child>
+      <axis>
+        <xyz>-0.99577 0.09188 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_lm'>
+      <pose relative_to='j_tibia_lm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.03105 -0.001873 -0.024404 0 -0 0</pose>
+        <mass>0.083403</mass>
+        <inertia>
+          <ixx>0.00514332</ixx>
+          <ixy>-0.000575305</ixy>
+          <ixz>-2.47822e-05</ixz>
+          <iyy>0.00819378</iyy>
+          <iyz>-1.93231e-05</iyz>
+          <izz>0.00113799</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_lm_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_lm.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='tibia_lm_fixed_joint_lump__tip5_collision_1'>
+        <pose>-0.033363 -0.006272 -0.121195 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip5.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2000</mu>
+              <mu2>1000</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_lm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_lm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='tibia_lm_fixed_joint_lump__tip5_visual_1'>
+        <pose>-0.033363 -0.006272 -0.121195 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='tip5_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>tibia_lm_fixed_joint_lump__tip5_collision_5</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='tip5_plugin' filename='libgazebo_ros_bumper.so'>
+          <bumperTopicName>tip5_contactsensor_state</bumperTopicName>
+          <frameName>tip5</frameName>
+        </plugin>
+        <pose>-0.033363 -0.006272 -0.121195 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='j_c1_lr' type='revolute'>
+      <pose relative_to='base_link'>0.087079 -0.047334 -0.05093 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>c1_lr</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_lr'>
+      <pose relative_to='j_c1_lr'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.018403 -0.051195 0.028245 0 -0 0</pose>
+        <mass>0.11513</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_lr_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_lr.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_lr_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_lr.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_lr' type='revolute'>
+      <pose relative_to='c1_lr'>0.057732 -0.065698 0.0282 0 -0 0</pose>
+      <parent>c1_lr</parent>
+      <child>thigh_lr</child>
+      <axis>
+        <xyz>-0.956375 -0.29214 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_lr'>
+      <pose relative_to='j_thigh_lr'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.015726 -0.052527 0.025841 0 -0 0</pose>
+        <mass>0.066086</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_lr_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_lr.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_lr_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_lr.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_lr' type='revolute'>
+      <pose relative_to='thigh_lr'>0.022523 -0.08229 0.048284 0 -0 0</pose>
+      <parent>thigh_lr</parent>
+      <child>tibia_lr</child>
+      <axis>
+        <xyz>-0.956375 -0.29214 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_lr'>
+      <pose relative_to='j_tibia_lr'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.029431 -0.010074 -0.024404 0 -0 0</pose>
+        <mass>0.083403</mass>
+        <inertia>
+          <ixx>0.00514332</ixx>
+          <ixy>-0.000575304</ixy>
+          <ixz>-2.47537e-05</ixz>
+          <iyy>0.00819378</iyy>
+          <iyz>-1.93337e-05</iyz>
+          <izz>0.00113799</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_lr_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_lr.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='tibia_lr_fixed_joint_lump__tip4_collision_1'>
+        <pose>-0.030488 -0.01493 -0.121195 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip4.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2000</mu>
+              <mu2>1000</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_lr_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_lr.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='tibia_lr_fixed_joint_lump__tip4_visual_1'>
+        <pose>-0.030488 -0.01493 -0.121195 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='tip4_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>tibia_lr_fixed_joint_lump__tip4_collision_5</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='tip4_plugin' filename='libgazebo_ros_bumper.so'>
+          <bumperTopicName>tip4_contactsensor_state</bumperTopicName>
+          <frameName>tip4</frameName>
+        </plugin>
+        <pose>-0.030488 -0.01493 -0.121195 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='j_c1_rf' type='revolute'>
+      <pose relative_to='base_link'>-0.087434 0.047179 -0.05093 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>c1_rf</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_rf'>
+      <pose relative_to='j_c1_rf'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.009967 0.053482 0.028313 0 -0 0</pose>
+        <mass>0.11513</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_rf_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_rf.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_rf_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_rf.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_rf' type='revolute'>
+      <pose relative_to='c1_rf'>0.016657 0.085859 0.0282 0 -0 0</pose>
+      <parent>c1_rf</parent>
+      <child>thigh_rf</child>
+      <axis>
+        <xyz>0.97301 0.23076 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_rf'>
+      <pose relative_to='j_thigh_rf'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.039246 0.033811 0.031475 0 -0 0</pose>
+        <mass>0.0660859</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_rf_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_rf.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_rf_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_rf.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_rf' type='revolute'>
+      <pose relative_to='thigh_rf'>-0.020522 0.075699 0.058811 0 -0 0</pose>
+      <parent>thigh_rf</parent>
+      <child>tibia_rf</child>
+      <axis>
+        <xyz>0.973011 0.23076 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_rf'>
+      <pose relative_to='j_tibia_rf'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.030929 -0.004313 -0.024248 0 -0 0</pose>
+        <mass>0.083403</mass>
+        <inertia>
+          <ixx>0.00514331</ixx>
+          <ixy>-0.00057529</ixy>
+          <ixz>-2.4845e-05</ixz>
+          <iyy>0.00819375</iyy>
+          <iyz>-1.89747e-05</iyz>
+          <izz>0.00113802</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_rf_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_rf.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='tibia_rf_fixed_joint_lump__tip1_collision_1'>
+        <pose>-0.036037 0.006692 -0.1204 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip1.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2000</mu>
+              <mu2>1000</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_rf_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_rf.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='tibia_rf_fixed_joint_lump__tip1_visual_1'>
+        <pose>-0.036037 0.006692 -0.1204 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='tip1_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>tibia_rf_fixed_joint_lump__tip1_collision_5</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='back_left_foot_plugin' filename='libgazebo_ros_bumper.so'>
+          <bumperTopicName>tip1_contactsensor_state</bumperTopicName>
+          <frameName>tip1</frameName>
+        </plugin>
+        <pose>-0.036037 0.006692 -0.1204 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='j_c1_rm' type='revolute'>
+      <pose relative_to='base_link'>1e-05 0.041978 -0.05093 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>c1_rm</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_rm'>
+      <pose relative_to='j_c1_rm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.007026 0.053947 0.028313 0 -0 0</pose>
+        <mass>0.115131</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_rm_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_rm.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_rm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_rm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_rm' type='revolute'>
+      <pose relative_to='c1_rm'>0.042342 0.076526 0.0282 0 -0 0</pose>
+      <parent>c1_rm</parent>
+      <child>thigh_rm</child>
+      <axis>
+        <xyz>0.99673 -0.080808 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_rm'>
+      <pose relative_to='j_thigh_rm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.026895 0.044273 0.031475 0 -0 0</pose>
+        <mass>0.0660859</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_rm_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_rm.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_rm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_rm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_rm' type='revolute'>
+      <pose relative_to='thigh_rm'>0.003843 0.078338 0.058811 0 -0 0</pose>
+      <parent>thigh_rm</parent>
+      <child>tibia_rm</child>
+      <axis>
+        <xyz>0.99673 -0.080808 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_rm'>
+      <pose relative_to='j_tibia_rm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.03075 0.005443 -0.024248 0 -0 0</pose>
+        <mass>0.0834029</mass>
+        <inertia>
+          <ixx>0.00514332</ixx>
+          <ixy>-0.000575298</ixy>
+          <ixz>-2.47627e-05</ixz>
+          <iyy>0.00819375</iyy>
+          <iyz>-1.89511e-05</iyz>
+          <izz>0.00113802</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_rm_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_rm.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='tibia_rm_fixed_joint_lump__tip2_collision_1'>
+        <pose>-0.032212 0.017488 -0.1204 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip2.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2000</mu>
+              <mu2>1000</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_rm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_rm.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='tibia_rm_fixed_joint_lump__tip2_visual_1'>
+        <pose>-0.032212 0.017488 -0.1204 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='tip2_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>tibia_rm_fixed_joint_lump__tip2_collision_5</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='tip2_plugin' filename='libgazebo_ros_bumper.so'>
+          <bumperTopicName>tip2_contactsensor_state</bumperTopicName>
+          <frameName>tip2</frameName>
+        </plugin>
+        <pose>-0.032212 0.017488 -0.1204 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='j_c1_rr' type='revolute'>
+      <pose relative_to='base_link'>0.087235 0.047179 -0.05093 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>c1_rr</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_rr'>
+      <pose relative_to='j_c1_rr'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.0222 0.05422 0.028313 0 -0 0</pose>
+        <mass>0.11513</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_rr_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_rr.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_rr_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/c1_rr.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_rr' type='revolute'>
+      <pose relative_to='c1_rr'>0.061687 0.068286 0.0282 0 -0 0</pose>
+      <parent>c1_rr</parent>
+      <child>thigh_rr</child>
+      <axis>
+        <xyz>0.956611 -0.291369 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_rr'>
+      <pose relative_to='j_thigh_rr'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.016259 0.049184 0.031475 0 -0 0</pose>
+        <mass>0.066086</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_rr_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_rr.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_rr_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/thigh_rr.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_rr' type='revolute'>
+      <pose relative_to='thigh_rr'>0.021347 0.075471 0.058811 0 -0 0</pose>
+      <parent>thigh_rr</parent>
+      <child>tibia_rr</child>
+      <axis>
+        <xyz>0.956611 -0.291369 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_rr'>
+      <pose relative_to='j_tibia_rr'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.028741 0.012214 -0.024248 0 -0 0</pose>
+        <mass>0.083403</mass>
+        <inertia>
+          <ixx>0.00514332</ixx>
+          <ixy>-0.000575306</ixy>
+          <ixz>-2.46989e-05</ixz>
+          <iyy>0.00819375</iyy>
+          <iyz>-1.89449e-05</iyz>
+          <izz>0.00113802</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_rr_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_rr.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='tibia_rr_fixed_joint_lump__tip3_collision_1'>
+        <pose>-0.027459 0.024279 -0.120405 3.14159 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip3.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>2000</mu>
+              <mu2>1000</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_rr_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tibia_rr.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='tibia_rr_fixed_joint_lump__tip3_visual_1'>
+        <pose>-0.027459 0.024279 -0.120405 3.14159 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexaurdf10/meshes/tip3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='tip3_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>tibia_rr_fixed_joint_lump__tip3_collision_5</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='tip3_plugin' filename='libgazebo_ros_bumper.so'>
+          <bumperTopicName>tip3_contactsensor_state</bumperTopicName>
+          <frameName>tip3</frameName>
+        </plugin>
+        <pose>-0.027459 0.024279 -0.120405 3.14159 -1.57079 -3e-06</pose>
+      </sensor>
+    </link>
+    <static>0</static>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/hexaurdf10</robotNamespace>
+    </plugin>
+  </model>
+</sdf>

@@ -1,0 +1,1966 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="hexaurdf10">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-9.01995993685678E-05 -7.02233808926034E-06 -0.0170204486555059"
+        rpy="0 0 0" />
+      <mass
+        value="0.527164873283659" />
+      <inertia
+        ixx="3.1081800"
+        ixy="-0.25460189"
+        ixz="2.0318174"
+        iyy="6.3787776"
+        iyz="0.16417863"
+        izz="5.3316425" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="c1_rf">
+    <inertial>
+      <origin
+        xyz="-0.00996677615501421 0.0534816504142664 0.0283131774124853"
+        rpy="0 0 0" />
+      <mass
+        value="0.115130491493586" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_rf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_rf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_c1_rf"
+    type="revolute">
+    <origin
+      xyz="-0.087434 0.047179 -0.05093"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="c1_rf" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="thigh_rf">
+    <inertial>
+      <origin
+        xyz="-0.0392463982034434 0.033810727811229 0.0314749457890496"
+        rpy="0 0 0" />
+      <mass
+        value="0.0660859499924982" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_rf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_rf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_thigh_rf"
+    type="revolute">
+    <origin
+      xyz="0.016657 0.085859 0.0282"
+      rpy="0 0 0" />
+    <parent
+      link="c1_rf" />
+    <child
+      link="thigh_rf" />
+    <axis
+      xyz="0.97301 0.23076 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tibia_rf">
+    <inertial>
+      <origin
+        xyz="-0.0309143702456073 -0.00434467341630906 -0.0239746701916343"
+        rpy="0 0 0" />
+      <mass
+        value="0.0831637264780428" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_rf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_rf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_tibia_rf"
+    type="revolute">
+    <origin
+      xyz="-0.0205222673024253 0.0756993537012256 0.0588106656482051"
+      rpy="0 0 0" />
+    <parent
+      link="thigh_rf" />
+    <child
+      link="tibia_rf" />
+    <axis
+      xyz="0.973010691759489 0.23076003493179 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tip1">
+    <inertial>
+      <origin
+        xyz="2.8944120935015E-05 -0.000122044266207932 0.0010109650611296"
+        rpy="0 0 0" />
+      <mass
+        value="0.000239235376940892" />
+      <inertia
+        ixx="1.17700421937413E-09"
+        ixy="-2.38032850442416E-10"
+        ixz="1.72208787878232E-11"
+        iyy="2.12422901332552E-09"
+        iyz="-7.26126566370207E-11"
+        izz="2.7729159203194E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip1_jt"
+    type="fixed">
+    <origin
+      xyz="-0.036037 0.0066924 -0.1204"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_rf" />
+    <child
+      link="tip1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+  </joint>
+  <gazebo reference="tip1">
+    <mu1 value="2000.0"/>
+    <mu2 value="1000.0"/>
+    <kp value="1000000"/>
+    <kd value="1.0"/>
+    <!-- Contact Sensor -->
+    <sensor name="tip1_sensor" type="contact">
+      <always_on>true</always_on>
+      <contact>
+        <collision>tibia_rf_fixed_joint_lump__tip1_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="back_left_foot_plugin">
+        <bumperTopicName>tip1_contactsensor_state</bumperTopicName>
+        <frameName>tip1</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <link
+    name="c1_rm">
+    <inertial>
+      <origin
+        xyz="0.00702595295081485 0.0539468244177731 0.0283131778377294"
+        rpy="0 0 0" />
+      <mass
+        value="0.115130507631966" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_rm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_rm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_c1_rm"
+    type="revolute">
+    <origin
+      xyz="1.04119442682904E-05 0.0419777704086039 -0.05093"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="c1_rm" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="thigh_rm">
+    <inertial>
+      <origin
+        xyz="-0.026895361536933 0.0442728429591131 0.0314749456998863"
+        rpy="0 0 0" />
+      <mass
+        value="0.0660859497825229" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_rm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_rm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_thigh_rm"
+    type="revolute">
+    <origin
+      xyz="0.0423424111674541 0.0765264348093442 0.0282"
+      rpy="0 0 0" />
+    <parent
+      link="c1_rm" />
+    <child
+      link="thigh_rm" />
+    <axis
+      xyz="0.996729696182891 -0.080807875526849 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tibia_rm">
+    <inertial>
+      <origin
+        xyz="-0.0307460867657561 0.00540861064554149 -0.0239746471855047"
+        rpy="0 0 0" />
+      <mass
+        value="0.0831636657575238" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_rm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_rm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_tibia_rm"
+    type="revolute">
+    <origin
+      xyz="0.0038428667079584 0.0783376536633586 0.0588106656482051"
+      rpy="0 0 0" />
+    <parent
+      link="thigh_rm" />
+    <child
+      link="tibia_rm" />
+    <axis
+      xyz="0.996729696182889 -0.0808078755268694 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tip2">
+    <inertial>
+      <origin
+        xyz="-1.01356932210722E-05 -0.000125019329600962 0.00101096506112963"
+        rpy="0 0 0" />
+      <mass
+        value="0.000239235376940891" />
+      <inertia
+        ixx="1.12747469759534E-09"
+        ixy="8.53866107810884E-11"
+        ixz="-6.03043169915054E-12"
+        iyy="2.1737585351043E-09"
+        iyz="-7.43827296059554E-11"
+        izz="2.77291592031939E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip2_jt"
+    type="fixed">
+    <origin
+      xyz="-0.032212 0.017488 -0.1204"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_rm" />
+    <child
+      link="tip2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+  </joint>
+  <gazebo reference="tip2">
+    <mu1 value="2000.0"/>
+    <mu2 value="1000.0"/>
+    <kp value="1000000"/>
+    <kd value="1.0"/>
+    <!-- Contact Sensor -->
+    <sensor name="tip2_sensor" type="contact">
+      <always_on>true</always_on>
+      <contact>
+        <collision>tibia_rm_fixed_joint_lump__tip2_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="tip2_plugin">
+        <bumperTopicName>tip2_contactsensor_state</bumperTopicName>
+        <frameName>tip2</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <link
+    name="c1_rr">
+    <inertial>
+      <origin
+        xyz="0.0221997669125888 0.0542198822140822 0.0283131763965716"
+        rpy="0 0 0" />
+      <mass
+        value="0.115130485576148" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_c1_rr"
+    type="revolute">
+    <origin
+      xyz="0.0872345529340218 0.0471785774978925 -0.05093"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="c1_rr" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="thigh_rr">
+    <inertial>
+      <origin
+        xyz="-0.0162592743139039 0.0491841543475647 0.0314749458152822"
+        rpy="0 0 0" />
+      <mass
+        value="0.0660859500921707" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_thigh_rr"
+    type="revolute">
+    <origin
+      xyz="0.0616868050052167 0.0682863147581348 0.0282000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="c1_rr" />
+    <child
+      link="thigh_rr" />
+    <axis
+      xyz="0.956610607760163 -0.291369430655879 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tibia_rr">
+    <inertial>
+      <origin
+        xyz="-0.0287444949835653 0.0121790653958599 -0.0239746721026053"
+        rpy="0 0 0" />
+      <mass
+        value="0.0831637267082012" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_tibia_rr"
+    type="revolute">
+    <origin
+      xyz="0.0213473915477253 0.0754708187322992 0.0588106656482051"
+      rpy="0 0 0" />
+    <parent
+      link="thigh_rr" />
+    <child
+      link="tibia_rr" />
+    <axis
+      xyz="0.956610607760165 -0.291369430655872 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tip3">
+    <inertial>
+      <origin
+        xyz="0.00101096506112963 -0.000119544680993067 3.79688595718852E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.000239235376940891" />
+      <inertia
+        ixx="2.77291592031939E-09"
+        ixy="-7.11254788401556E-11"
+        ixz="2.25903260239757E-11"
+        iyy="2.0835374700736E-09"
+        iyz="-3.05855970793227E-10"
+        izz="1.21769576262603E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip3_jt"
+    type="fixed">
+    <origin
+      xyz="-0.0274588315162456 0.0242788522498839 -0.12040476058911"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="tibia_rr" />
+    <child
+      link="tip3" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+  </joint>
+  <gazebo reference="tip3">
+    <mu1 value="2000.0"/>
+    <mu2 value="1000.0"/>
+    <kp value="1000000"/>
+    <kd value="1.0"/>
+    <!-- Contact Sensor -->
+    <sensor name="tip3_sensor" type="contact">
+      <always_on>true</always_on>
+      <contact>
+        <collision>tibia_rr_fixed_joint_lump__tip3_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="tip3_plugin">
+        <bumperTopicName>tip3_contactsensor_state</bumperTopicName>
+        <frameName>tip3</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <link
+    name="c1_lr">
+    <inertial>
+      <origin
+        xyz="0.0184026875519722 -0.051195357644339 0.0282453400903533"
+        rpy="0 0 0" />
+      <mass
+        value="0.115130487166804" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_lr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_lr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_c1_lr"
+    type="revolute">
+    <origin
+      xyz="0.0870789894421607 -0.0473341409897536 -0.05093"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="c1_lr" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="thigh_lr">
+    <inertial>
+      <origin
+        xyz="-0.015725862641403 -0.0525267254797426 0.0258410063023246"
+        rpy="0 0 0" />
+      <mass
+        value="0.0660859502202923" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_lr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_lr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_thigh_lr"
+    type="revolute">
+    <origin
+      xyz="0.0577315713668131 -0.065698102526794 0.0282"
+      rpy="0 0 0" />
+    <parent
+      link="c1_lr" />
+    <child
+      link="thigh_lr" />
+    <axis
+      xyz="-0.956375489427927 -0.292140245809256 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tibia_lr">
+    <inertial>
+      <origin
+        xyz="-0.0294274762289797 -0.0100598567813739 -0.0241284533134065"
+        rpy="0 0 0" />
+      <mass
+        value="0.0831637325814451" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_lr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_lr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_tibia_lr"
+    type="revolute">
+    <origin
+      xyz="0.0225227920570593 -0.0822900871129893 0.0482836970507796"
+      rpy="0 0 0" />
+    <parent
+      link="thigh_lr" />
+    <child
+      link="tibia_lr" />
+    <axis
+      xyz="-0.956375489427925 -0.292140245809264 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tip4">
+    <inertial>
+      <origin
+        xyz="-1.34483772956662E-05 4.40257670850236E-05 0.00101767568156874"
+        rpy="0 0 0" />
+      <mass
+        value="0.000239235376940891" />
+      <inertia
+        ixx="1.21034606196609E-09"
+        ixy="-2.93957096001634E-10"
+        ixz="-8.05449062996898E-12"
+        iyy="2.08287543495912E-09"
+        iyz="2.63678747753188E-11"
+        izz="2.78092765609382E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip4_jt"
+    type="fixed">
+    <origin
+      xyz="-0.0304883031090567 -0.014930274944373 -0.121195324707457"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_lr" />
+    <child
+      link="tip4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <gazebo reference="tip4">
+    <mu1 value="2000.0"/>
+    <mu2 value="1000.0"/>
+    <kp value="1000000"/>
+    <kd value="1.0"/>
+    <!-- Contact Sensor -->
+    <sensor name="tip4_sensor" type="contact">
+      <always_on>true</always_on>
+      <contact>
+        <collision>tibia_lr_fixed_joint_lump__tip4_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="tip4_plugin">
+        <bumperTopicName>tip4_contactsensor_state</bumperTopicName>
+        <frameName>tip4</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <link
+    name="c1_lm">
+    <inertial>
+      <origin
+        xyz="0.00410518430927102 -0.0542473170200753 0.0282453387557866"
+        rpy="0 0 0" />
+      <mass
+        value="0.11513051040574" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_lm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_lm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_c1_lm"
+    type="revolute">
+    <origin
+      xyz="-0.000209588055731805 -0.041977770408604 -0.05093"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="c1_lm" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="thigh_lm">
+    <inertial>
+      <origin
+        xyz="-0.0291455773014262 -0.0464423839953297 0.0258410061827461"
+        rpy="0 0 0" />
+      <mass
+        value="0.0660859498433511" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_lm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_lm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_thigh_lm"
+    type="revolute">
+    <origin
+      xyz="0.0381519901013576 -0.0786994323957198 0.0282000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="c1_lm" />
+    <child
+      link="thigh_lm" />
+    <axis
+      xyz="-0.99577013165006 0.0918795130245163 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tibia_lm">
+    <inertial>
+      <origin
+        xyz="-0.0310437838343144 -0.00186025755413441 -0.0241284529459698"
+        rpy="0 0 0" />
+      <mass
+        value="0.0831637330024272" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_lm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_lm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_tibia_lm"
+    type="revolute">
+    <origin
+      xyz="-0.000203810616336522 -0.0853164290177546 0.0482836970507797"
+      rpy="0 0 0" />
+    <parent
+      link="thigh_lm" />
+    <child
+      link="tibia_lm" />
+    <axis
+      xyz="-0.99577013165006 0.0918795130245162 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tip5">
+    <inertial>
+      <origin
+        xyz="-1.23898912395004E-06 4.60173002822251E-05 0.00101767568156877"
+        rpy="0 0 0" />
+      <mass
+        value="0.000239235376940891" />
+      <inertia
+        ixx="1.12131430106366E-09"
+        ixy="-2.83071249629712E-11"
+        ixz="-7.42054306639292E-13"
+        iyy="2.17190719586154E-09"
+        iyz="2.75606421347752E-11"
+        izz="2.78092765609381E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip5_jt"
+    type="fixed">
+    <origin
+      xyz="-0.0333632688956824 -0.00627232213607404 -0.121195324707457"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_lm" />
+    <child
+      link="tip5" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <gazebo reference="tip5">
+    <mu1 value="2000.0"/>
+    <mu2 value="1000.0"/>
+    <kp value="1000000"/>
+    <kd value="1.0"/>
+    <!-- Contact Sensor -->
+    <sensor name="tip5_sensor" type="contact">
+      <always_on>true</always_on>
+      <contact>
+        <collision>tibia_lm_fixed_joint_lump__tip5_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="tip5_plugin">
+        <bumperTopicName>tip5_contactsensor_state</bumperTopicName>
+        <frameName>tip5</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <link
+    name="c1_lf">
+    <inertial>
+      <origin
+        xyz="-0.0105561368542174 -0.0533684505149676 0.028245339183021"
+        rpy="0 0 0" />
+      <mass
+        value="0.115130490364098" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/c1_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_c1_lf"
+    type="revolute">
+    <origin
+      xyz="-0.0874337290454854 -0.0471785774978922 -0.05093"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="c1_lf" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="thigh_lf">
+    <inertial>
+      <origin
+        xyz="-0.0405071770934144 -0.0369530550570344 0.0258410062748393"
+        rpy="0 0 0" />
+      <mass
+        value="0.0660859501573358" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/thigh_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_thigh_lf"
+    type="revolute">
+    <origin
+      xyz="0.0157086456858173 -0.0860372794712854 0.0282000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="c1_lf" />
+    <child
+      link="thigh_lf" />
+    <axis
+      xyz="-0.990436681141514 0.137968042130713 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tibia_lf">
+    <inertial>
+      <origin
+        xyz="-0.0304100328765285 0.00651206661555905 -0.0241284534107476"
+        rpy="0 0 0" />
+      <mass
+        value="0.0831637299024112" />
+      <inertia
+        ixx="0.0051411124"
+        ixy="-0.00057530255"
+        ixz="-0.000024729049"
+        iyy="0.0081915737"
+        iyz="-0.000019223094"
+        izz="0.0011379812" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tibia_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_tibia_lf"
+    type="revolute">
+    <origin
+      xyz="-0.0230193932677872 -0.0821525540241559 0.0482836970507797"
+      rpy="0 0 0" />
+    <parent
+      link="thigh_lf" />
+    <child
+      link="tibia_lf" />
+    <axis
+      xyz="-0.990436681141515 0.137968042130712 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="tip6">
+    <inertial>
+      <origin
+        xyz="1.11162605727633E-05 4.46716439164024E-05 0.00101767568156877"
+        rpy="0 0 0" />
+      <mass
+        value="0.000239235376940892" />
+      <inertia
+        ixx="1.18190356101911E-09"
+        ixy="2.46545900213277E-10"
+        ixz="6.65774127650596E-12"
+        iyy="2.11131793590611E-09"
+        iyz="2.67547027748436E-11"
+        izz="2.78092765609382E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/tip6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip6_jt"
+    type="fixed">
+    <origin
+      xyz="-0.0338252558164659 0.00288128536159279 -0.121195324707457"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_lf" />
+    <child
+      link="tip6" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <gazebo reference="tip6">
+    <mu1 value="2000.0"/>
+    <mu2 value="1000.0"/>
+    <kp value="1000000"/>
+    <kd value="1.0"/>
+    <!-- Contact Sensor -->
+    <sensor name="tip6_sensor" type="contact">
+      <always_on>true</always_on>
+      <contact>
+        <collision>tibia_lf_fixed_joint_lump__tip6_collision_1</collision>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="tip6_plugin">
+        <bumperTopicName>tip6_contactsensor_state</bumperTopicName>
+        <frameName>tip6</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <link
+    name="imu_link">
+    <inertial>
+      <origin
+        xyz="0 0 -0.0005"
+        rpy="0 0 0" />
+      <mass
+        value="0.0375" />
+      <inertia
+        ixx="7.0625E-09"
+        ixy="-3.59111970552275E-24"
+        ixz="2.68192909831876E-26"
+        iyy="1.95625E-08"
+        iyz="-2.88153880920263E-26"
+        izz="2.65625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/imu_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/imu_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_jt"
+    type="fixed">
+    <origin
+      xyz="-9.9588E-05 0 0.001"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="-0.00295566016403623 0.000408224654246045 -0.00114614643580409"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248866659018299" />
+      <inertia
+        ixx="1.92498237281233E-05"
+        ixy="6.19344760790345E-07"
+        ixz="2.83084375965545E-07"
+        iyy="3.42853640675047E-06"
+        iyz="1.03595008563604E-07"
+        izz="1.70918886994227E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexaurdf10/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_jt"
+    type="fixed">
+    <origin
+      xyz="-0.113664058453648 0.000280846259388387 0.0736209638658032"
+      rpy="0 0.523598775598304 3.12646564854384" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+    <transmission name="t_c1_rf">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_c1_rf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_c1_rf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_thigh_rf">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_thigh_rf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_thigh_rf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_tibia_rf">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_tibia_rf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_tibia_rf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_c1_rm">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_c1_rm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_c1_rm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_thigh_rm">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_thigh_rm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_thigh_rm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_tibia_rm">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_tibia_rm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_tibia_rm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_c1_rr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_c1_rr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_c1_rr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_thigh_rr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_thigh_rr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_thigh_rr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_tibia_rr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_tibia_rr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_tibia_rr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_c1_lr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_c1_lr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_c1_lr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_thigh_lr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_thigh_lr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_thigh_lr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_tibia_lr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_tibia_lr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_tibia_lr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_c1_lm">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_c1_lm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_c1_lm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_thigh_lm">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_thigh_lm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_thigh_lm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_tibia_lm">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_tibia_lm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_tibia_lm">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_c1_lf">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_c1_lf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_c1_lf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_thigh_lf">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_thigh_lf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_thigh_lf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="t_tibia_lf">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_tibia_lf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="m_tibia_lf">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/hexaurdf10</robotNamespace>
+        </plugin>
+    </gazebo>
+    <gazebo reference="camera_link">
+  <sensor name="camera_link_camera" type="depth">
+    <update_rate>20</update_rate>
+    <camera>
+      <horizontal_fov>1.047198</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>3</far>
+      </clip>
+    </camera>
+    <plugin name="camera_link_controller" filename="libgazebo_ros_openni_kinect.so">
+      <baseline>0.2</baseline>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <cameraName>camera_link_ir</cameraName>
+      <imageTopicName>/camera_link/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/camera_link/color/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>/camera_link/depth/image_raw</depthImageTopicName>
+      <depthImageInfoTopicName>/camera_link/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>/camera_link/depth/points</pointCloudTopicName>
+      <frameName>camera_link</frameName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+      <distortionK1>0.00000001</distortionK1>
+      <distortionK2>0.00000001</distortionK2>
+      <distortionK3>0.00000001</distortionK3>
+      <distortionT1>0.00000001</distortionT1>
+      <distortionT2>0.00000001</distortionT2>
+      <CxPrime>0</CxPrime>
+      <Cx>0</Cx>
+      <Cy>0</Cy>
+      <focalLength>0</focalLength>
+      <hackBaseline>0</hackBaseline>
+    </plugin>
+  </sensor>
+</gazebo>
+    <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>true</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <gazebo>
+<plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+  <alwaysOn>true</alwaysOn>
+  <updateRate>50.0</updateRate>
+  <bodyName>base_link</bodyName>
+  <topicName>odom</topicName>
+  <gaussianNoise>0.01</gaussianNoise>
+  <frameName>world</frameName>
+  <xyzOffsets>0 0 0</xyzOffsets>
+  <rpyOffsets>0 0 0</rpyOffsets>
+</plugin>
+</gazebo> 
+  <gazebo reference="base_link">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="c1_rf">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="c1_rm">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="c1_rr">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="c1_lr">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="c1_lm">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="c1_lf">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="thigh_rf">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="thigh_rm">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="thigh_rr">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="thigh_lr">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="thigh_lm">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="thigh_lf">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="tibia_rf">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="tibia_rm">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="tibia_rr">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="tibia_lr">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="tibia_lm">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="tibia_lf">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="camera_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="imu_link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tip1">
+    <material>Gazebo/RedGlow</material>
+  </gazebo>
+  <gazebo reference="tip2">
+    <material>Gazebo/RedGlow</material>
+  </gazebo>
+  <gazebo reference="tip3">
+    <material>Gazebo/RedGlow</material>
+  </gazebo>
+  <gazebo reference="tip4">
+    <material>Gazebo/RedGlow</material>
+  </gazebo>
+  <gazebo reference="tip5">
+    <material>Gazebo/RedGlow</material>
+  </gazebo>
+  <gazebo reference="tip6">
+    <material>Gazebo/RedGlow</material>
+  </gazebo>
+</robot>

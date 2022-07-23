@@ -1,0 +1,21 @@
+<launch>
+
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <arg name="world_name" value="$(find hexaurdf10)/worlds/stepterrain.world"/>
+    <arg name="paused" value="true"/>
+  </include>
+  
+   <param name="robot_description" textfile="$(find hexaurdf10)/urdf/hexaurdf10.urdf" />  
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find hexaurdf10)/urdf/hexaurdf10.urdf -urdf -model hexaurdf10 -z 0.2" />
+
+
+
+ 
+ <include file="$(find hexaurdf10)/launch/hexa_controller.launch"/> 
+ <node pkg="tf" type="static_transform_publisher" name="base_to_kinect" args=" 0 0 0 1.57 -3.14 1.05 base_link camera_link 100" />
+  <node name="hexaurdf10_walker" pkg="hexaurdf10" type="walker.py" />
+
+
+
+</launch>
