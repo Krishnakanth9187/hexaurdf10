@@ -4,7 +4,7 @@ Inline-style:
 ![alt text](https://github.com/Krishnakanth9187/hexaurdf10/commit/9ec349510f36ac5e99670b9269d6c2de8f84b2fe)
 ## Install
 
-Clone in your catkin workspace and catkin_make it:```roslaunch hexaurdf10 gazebo.launch```
+Clone in your catkin workspace and catkin_make it:```git clone https://github.com/Krishnakanth9187/hexaurdf10.git```
 # Procedure
 1. 
 2. To launch the simulation world:```roslaunch hexaurdf10 gazebo.launch```
