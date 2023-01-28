@@ -3,4 +3,4 @@ In this project an adaptive walking algorithm is developed for a hexapod robot (
 ![alt text](https://drive.google.com/file/d/1ZxwlChB5tgeT_3mN-SCZe54eq2eRLpX5/view?usp=share_link)
 # Procedure
 1. To launch the simulation world.
-`roslaunch hexaurdf10 gazebo.launch`
+```roslaunch hexaurdf10 gazebo.launch```
