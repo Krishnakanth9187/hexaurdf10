@@ -3,8 +3,7 @@ In this project an adaptive walking algorithm is developed for a hexapod robot (
 Inline-style: 
 ![alt text](https://github.com/Krishnakanth9187/hexaurdf10/commit/9ec349510f36ac5e99670b9269d6c2de8f84b2fe)
 # Procedure
-1. To launch the simulation world:  
-```roslaunch hexaurdf10 gazebo.launch```
+1. To launch the simulation world:```roslaunch hexaurdf10 gazebo.launch```
 2. To run gait transitions from tripod to slow tripod gait:
 ```rosrun hexaurdf10 hexa_walk3.py```
 3. To run gait transitions from tripod to wave gait:
