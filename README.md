@@ -7,9 +7,8 @@ In this project an adaptive walking algorithm is developed for a hexapod robot (
 
 Clone in your catkin workspace and catkin_make it:```git clone https://github.com/Krishnakanth9187/hexaurdf10.git```
 # Procedure
-1. 
-2. To launch the simulation world:```roslaunch hexaurdf10 gazebo.launch```
-3. To run gait transitions from tripod to slow tripod gait:
+1. To launch the simulation world:```roslaunch hexaurdf10 gazebo.launch```
+2. To run gait transitions from tripod to slow tripod gait:
 ```rosrun hexaurdf10 hexa_walk3.py```
-4. To run gait transitions from tripod to wave gait:
+3. To run gait transitions from tripod to wave gait:
 ```rosrun hexaurdf10 hexa_walk4.py```
